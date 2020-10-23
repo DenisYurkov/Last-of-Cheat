@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Test Scene/Test_level1.unity.meta
 guid: f68692f5df89f6b4e939871406264769
+=======
+guid: 9510339a735867c4690055d03e7184bd
+folderAsset: yes
+>>>>>>> main:Assets/Anim/Animation.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
