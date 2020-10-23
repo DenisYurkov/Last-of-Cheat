@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Test Scene/Test_level1.unity
-=======
 - path: Assets/Test Scene/Test Character.unity
->>>>>>> main
   isLoaded: 1
   isActive: 1
   isSubScene: 0
