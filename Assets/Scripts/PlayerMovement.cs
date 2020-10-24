@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Скрипт движения персонажа.
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] CharacterController playerController;
