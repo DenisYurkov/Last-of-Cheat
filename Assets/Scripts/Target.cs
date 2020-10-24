@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Скрипт для врагов или для объектов которые нужно уничтожить с помощью оружия.
 public class Target : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float health = 50f;
+    [SerializeField] ParticleSystem destroyEffect;
+
+    public void TakeDamage (float amout)
     {
-        
+        health -= amout;
+        if (health <= 0f)
+        {
+            Die();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Die()
     {
-        
+        Destroy(gameObject);
     }
 }
