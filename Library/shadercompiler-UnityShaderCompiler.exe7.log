@@ -1,5 +1,9 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.13f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.13f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
@@ -11,3 +15,5 @@ Cmd: compileSnippet
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+>>>>>>> main
+>>>>>>> main
