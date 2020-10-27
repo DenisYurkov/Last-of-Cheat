@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     
     [SerializeField] Camera fpsCam;
     [SerializeField] ParticleSystem shotEffect;
+    [SerializeField] AudioSource audioShot;
 
     // Update is called once per frame
     void Update()
@@ -20,8 +21,9 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-        // Запускает эффект выстрела.
+        // Запускает эффект выстрела и звук выстрела.
         shotEffect.Play();
+        audioShot.Play();
 
         // Структура, используемая для получения информации из рейкаста.
         RaycastHit hit;
