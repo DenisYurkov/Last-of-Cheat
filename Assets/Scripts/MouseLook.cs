@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Скрипт поворота камеры персонажа.
 public class MouseLook : MonoBehaviour
 {
     [SerializeField] float mouseSpeed = 100f;
