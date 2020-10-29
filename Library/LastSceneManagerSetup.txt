@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Art and assets/EmaceArt/Slavic World Free/Scene/Slavica Free.unity
+- path: Assets/Test Scene/Test Character.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
