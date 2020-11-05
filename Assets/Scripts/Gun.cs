@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Camera fpsCam;
     [SerializeField] ParticleSystem shotEffect;
     [SerializeField] AudioSource audioShot;
+    [SerializeField] ParticleSystem destroyEffect;
 
     // Update is called once per frame
     void Update()
@@ -37,6 +38,8 @@ public class Gun : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
+
+            Instantiate(destroyEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
     }
 }

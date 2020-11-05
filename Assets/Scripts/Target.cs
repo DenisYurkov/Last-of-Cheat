@@ -6,7 +6,6 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     [SerializeField] float health = 50f;
-    [SerializeField] ParticleSystem destroyEffect;
 
     public void TakeDamage (float amout)
     {
