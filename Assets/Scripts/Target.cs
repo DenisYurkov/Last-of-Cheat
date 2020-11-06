@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*Denis Yurkov*/
 // Скрипт для врагов или для объектов которые нужно уничтожить с помощью оружия.
 public class Target : MonoBehaviour
 {

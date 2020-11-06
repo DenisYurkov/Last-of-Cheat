@@ -5,7 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+<<<<<<< Updated upstream
   - Quit
+=======
+  - Use fire
+  - barrel roll
+  - die effect
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
