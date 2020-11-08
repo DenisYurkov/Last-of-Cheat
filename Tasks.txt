@@ -23,9 +23,8 @@ Tasks:
 		+ Add new materials(Denis Yurkov)	
 		+ Add AI in game(Denis Yurkov)
 		+ работать над AI, чтобы оно нормально работало.(Denis Yurkov)
-		
+		+ add effect die(Denis Yurkov)
 	Невыполненные:
 		
-		- Добавить врагов и дать им оружия, и сделать эти объекты prefabs.(Denis Yurkov)	
-		- Добавить эффект смерти(Denis Yurkov)
+		- Доработать AI, добавить его в Prefabs.(Denis Yurkov)
 		- сделать UI(Aliaksiej)
