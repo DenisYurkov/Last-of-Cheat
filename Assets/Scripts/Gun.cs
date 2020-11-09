@@ -16,7 +16,6 @@ public class Gun : MonoBehaviour
     [SerializeField] ParticleSystem explosionEffect;
     [SerializeField] ParticleSystem dieEffect;
 
-
     [Header("Audio")]
     [SerializeField] AudioSource audioShot;
 

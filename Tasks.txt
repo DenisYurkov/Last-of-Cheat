@@ -23,9 +23,22 @@ Tasks:
 		+ Add new materials(Denis Yurkov)	
 		+ Add AI in game(Denis Yurkov)
 		+ работать над AI, чтобы оно нормально работало.(Denis Yurkov)
+		+ add effect die(Denis Yurkov)
+		+ сделать UI Menu(Aliaksiej)
+		+ Добавить видео в UI Menu(Denis Yurkov)				
+		+ Добавить видео для меню, записать эту анимацию, и вставить ей.(Denis Yurkov)
 		
+
 	Невыполненные:
-		
-		- Добавить врагов и дать им оружия, и сделать эти объекты prefabs.(Denis Yurkov)	
-		- Добавить эффект смерти(Denis Yurkov)
-		- сделать UI(Aliaksiej)
+		- Доработать AI, сделать так чтобы AI нормально стрелало, и чтобы пуля летела ровна, чтобы враг стрелял возле пистолета, 
+			и чтобы когда пуля попадает в персонажа, 
+			снималось HP, добавить его в Prefabs.(Denis Yurkov)
+		- Write code for Health BAR, and add Health BAR(Denis Yurkov) 
+		+ Добавить взрывающиейся бочку, звук и анимация.
+		- Написать код для Главного меню, и меню с паузой(Denis Yurkov)
+		- Сделать меню паузы(Aliaksiej)
+		- Сделать текст название игры(Aliaksiej)
+		- Добавить и написать музыку(Denis Yurkov)
+		- Добавить подсказку по управлению(Denis Yurkov)
+		- Добавить в уровень сцену тира, где игрок может пострелять(Denis Yurkov)
+		- Добавить взрывающиейся бочку, звук и анимация.(Denis Yurkov)		

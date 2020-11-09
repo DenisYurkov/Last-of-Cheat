@@ -6,11 +6,11 @@ using UnityEngine.AI;
 
 public class AI : MonoBehaviour
 {
-
+    public float playerHealth = 100f;
+    
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
-    public float health;
 
     // Patroling.
     public Vector3 walkPoint;
@@ -87,8 +87,8 @@ public class AI : MonoBehaviour
 
             // Attack code here.
             Rigidbody rb = Instantiate(enemAttack, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 24f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 4f, ForceMode.Impulse);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -100,24 +100,26 @@ public class AI : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    public void TakeDamage(int damage)
+    /*private void OnCollisionEnter(Collision collision)
     {
-        health -= damage;
-
-        if (health <= 0) Invoke(nameof(DestroyEnemy), .5f);
-    }
-
-    private void DestroyEnemy()
+        if(collision.gameObject.name == "First Person Player")
+        {
+            Debug.Log("hit");
+           *//* playerHealth -= 10;
+            if (playerHealth <= 0) Invoke(nameof(DestroyEnemy), 0.5f);*//*
+        }
+    }*/
+    private void DestroyPlayer()
     {
-        Destroy(gameObject);
+        Destroy(GameObject.Find("First Person Player"));
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 }
