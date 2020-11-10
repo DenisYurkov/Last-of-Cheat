@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - barrel roll
+  - die effect
   layers:
   - Default
   - TransparentFX
@@ -13,13 +15,13 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - WhatIsGround
+  - WhatIsPlayer
+  - WhatIsWall
+  - WhatIsEnemy
+  - WhatIsPlayer
+  - WhatIsBullet
+  - WhatIsLadder
   - 
   - 
   - 
