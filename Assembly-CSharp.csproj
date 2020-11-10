@@ -77,6 +77,7 @@
     <Compile Include="Assets\Shared\Scripts\SimpleCharacterMotor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\Fonts\OFL.txt" />
     <None Include="Assets\Art and assets\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -676,6 +677,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Programming/Unity/Last-of-Cheat/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>D:/Programming/Unity/Last-of-Cheat/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:/Programming/Unity/Last-of-Cheat/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
@@ -690,9 +694,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Programming/Unity/Last-of-Cheat/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder.Base">
-      <HintPath>D:/Programming/Unity/Last-of-Cheat/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
