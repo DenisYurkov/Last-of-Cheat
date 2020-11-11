@@ -8,6 +8,7 @@ TagManager:
   - die effect
   - Quit
   - barrel explosion
+  - killPlayer
   layers:
   - Default
   - TransparentFX

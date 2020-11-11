@@ -5,9 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class AI : MonoBehaviour
-{
-    public float playerHealth = 100f;
-    
+{   
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -98,20 +96,6 @@ public class AI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-    }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "First Person Player")
-        {
-            Debug.Log("hit");
-           *//* playerHealth -= 10;
-            if (playerHealth <= 0) Invoke(nameof(DestroyEnemy), 0.5f);*//*
-        }
-    }*/
-    private void DestroyPlayer()
-    {
-        Destroy(GameObject.Find("First Person Player"));
     }
 
     private void OnDrawGizmosSelected()
