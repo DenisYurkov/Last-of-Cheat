@@ -6,6 +6,8 @@ TagManager:
   tags:
   - barrel roll
   - die effect
+  - Quit
+  - barrel explosion
   layers:
   - Default
   - TransparentFX
