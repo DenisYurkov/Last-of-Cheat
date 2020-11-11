@@ -11,13 +11,13 @@ public class Gun : MonoBehaviour
     [Header("Camera")]
     [SerializeField] Camera fpsCam;
 
-    [Header("Praticle")]
+    [Header("Particle")]
     [SerializeField] ParticleSystem shotEffect;
-    [SerializeField] ParticleSystem explosionEffect;
-    [SerializeField] ParticleSystem dieEffect;
+    [SerializeField] ParticleSystem explosionAndDieEffect;
 
     [Header("Audio")]
     [SerializeField] AudioSource audioShot;
+    [SerializeField] AudioSource barrelExplosion;
 
     // Update is called once per frame
     void Update()
@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
             Target target = hit.transform.GetComponent<Target>();
             
             // Если target не равен пустому объекту, то отнимать у объекты HP.
@@ -47,14 +47,15 @@ public class Gun : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
-            if (hit.transform.gameObject.tag == "barrel roll")
+            if (hit.transform.gameObject.tag == "barrel roll" || hit.transform.gameObject.tag == "die effect")
             { 
-                Instantiate(explosionEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
             }
- 
-            if (hit.transform.gameObject.tag == "die effect")
+
+            if (hit.transform.gameObject.tag == "barrel explosion")
             {
-                Instantiate(dieEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                barrelExplosion.Play();
             }
         }
     }
