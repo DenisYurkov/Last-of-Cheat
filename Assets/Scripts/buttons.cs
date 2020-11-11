@@ -15,28 +15,42 @@ public class buttons : MonoBehaviour
     public Slider sliderMusic, sliderSound;
     public Sprite music_on, music_off; 
     public Sprite Sound_on, Sound_off;
-    void Start()
-    {
-       
-    }
+
+    
     void Escape() {
         if (BgSet.activeSelf == true) {
+            Time.timeScale = 1;
             BgSet.SetActive(false);
             BgMenu.SetActive(true);
             DarkBg.SetActive(false);
-        } else { 
-        if  (DarkBg.activeSelf == false) DarkBg.SetActive(true);
-        else DarkBg.SetActive(false);
+        } else {
+            if (DarkBg.activeSelf == false)
+            {
+                
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.Confined;
+               
+                DarkBg.SetActive(true);
+            }
+            else
+            {
+               
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+
+                DarkBg.SetActive(false);
+            } 
         }
 
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (AUSWin.activeSelf == false)
+            if (AUSWin.activeSelf == false)  
                 Escape();
             
         }
+
 
        if (BgSet.activeSelf == true) { 
         GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = sliderMusic.value;
