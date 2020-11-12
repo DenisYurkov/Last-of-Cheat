@@ -14,18 +14,20 @@ public class Gun : MonoBehaviour
     [Header("Particle")]
     [SerializeField] ParticleSystem shotEffect;
     [SerializeField] ParticleSystem explosionAndDieEffect;
+    [SerializeField] public float timeParticleDie = 1f;
 
     [Header("Audio")]
     [SerializeField] AudioSource audioShot;
     [SerializeField] AudioSource barrelExplosion;
 
-    public GameObject DarkBG;
+    [Header("UI")]
+    [SerializeField] GameObject DarkBG;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            
             Shoot();
         }
     }
@@ -60,11 +62,13 @@ public class Gun : MonoBehaviour
                 if (hit.transform.gameObject.tag == "barrel roll" || hit.transform.gameObject.tag == "die effect")
                 {
                     Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(explosionAndDieEffect, timeParticleDie);
                 }
 
                 if (hit.transform.gameObject.tag == "barrel explosion")
                 {
                     Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(explosionAndDieEffect, timeParticleDie);
                     barrelExplosion.Play();
                 }
             }

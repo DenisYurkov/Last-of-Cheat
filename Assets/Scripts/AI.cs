@@ -84,7 +84,7 @@ public class AI : MonoBehaviour
         {
 
             // Attack code here.
-            Rigidbody rb = Instantiate(enemAttack, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(enemAttack, transform.position, Quaternion.Euler(-90, 25, 4)).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 24f, ForceMode.Impulse);
             rb.AddForce(transform.up * 4f, ForceMode.Impulse);
 

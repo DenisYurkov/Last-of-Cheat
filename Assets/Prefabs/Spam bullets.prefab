@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7431102928481793859}
   - component: {fileID: 7431102928481793856}
   - component: {fileID: 5888444128358206174}
+  - component: {fileID: -7580084211704008263}
   m_Layer: 13
   m_Name: Spam bullets
   m_TagString: killPlayer
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7431102928481793857}
-  m_LocalRotation: {x: -0.07858638, y: 0.17643593, z: -0.097605966, w: -0.97630304}
-  m_LocalPosition: {x: 4.7040057, y: 7.151335, z: -18.072071}
-  m_LocalScale: {x: 0.54650706, y: 0.54650706, z: 0.54650706}
+  m_LocalRotation: {x: -0.57667917, y: 0.29085985, z: -0.2738737, w: 0.7126254}
+  m_LocalPosition: {x: 0.00000676373, y: 0.55430585, z: -0.0010000347}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 10.830001, y: -19.581001, z: 9.544001}
+  m_LocalEulerAnglesHint: {x: -41.498, y: 77.22, z: -75.71001}
 --- !u!23 &7431102928481793858
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110,3 +111,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22320087, y: 0.5127426, z: 0.22320086}
   m_Center: {x: 0.0015861469, y: 0.0000004918331, z: 2.369236e-10}
+--- !u!114 &-7580084211704008263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7431102928481793857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06c0a5dbaa3aae44a66979df268e0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBulletDie: 1
+  bullet: {fileID: 7431102928481793857}

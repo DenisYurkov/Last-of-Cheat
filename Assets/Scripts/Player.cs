@@ -20,24 +20,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health == 0)
+        if (currentHealth == 0)
         {
-            Destroy(GameObject.Find("First Person Player"));
+            /* Destroy(GameObject.Find("First Person Player"));*/
+            Debug.Log("You lose!");
         }
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("hit");
-        }
-    }
-
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        
     }
 }
