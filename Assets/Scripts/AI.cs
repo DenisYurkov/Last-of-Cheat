@@ -82,11 +82,11 @@ public class AI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-
+            // transform.position = new Vector2(1, 6.0f).
             // Attack code here.
-            Rigidbody rb = Instantiate(enemAttack, transform.position, Quaternion.Euler(-90, 25, 4)).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(enemAttack, transform.position, transform.rotation * Quaternion.Euler(90, 0, 0)).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 24f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 4f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 2f, ForceMode.Impulse);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

@@ -8,6 +8,7 @@ public class resultOfGame : MonoBehaviour
     // Start is called before the first frame update
     public Sprite GameOver, UWin;
     public GameObject ResWin;
+   
     void Start()
     {
         
@@ -16,9 +17,9 @@ public class resultOfGame : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B)) {
-           Debug.Log("hgfhfhgfhf");
-            GameOverFuction();
-            
+            ResWin.SetActive(true);
+            GameObject.Find("ResIm").GetComponent<Image>().sprite = GameOver;
+
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
@@ -26,10 +27,4 @@ public class resultOfGame : MonoBehaviour
             GameObject.Find("ResIm").GetComponent<Image>().sprite = UWin;
         }
     }
-   void GameOverFuction() {
-        
-        ResWin.SetActive(true);
-        GameObject.Find("GameOverBG").GetComponent<Image>().sprite = GameOver;
-    }
-
 }

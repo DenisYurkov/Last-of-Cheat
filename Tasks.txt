@@ -36,15 +36,17 @@ Tasks:
 			и чтобы когда пуля попадает в персонажа, исчезновение пуль, 
 			снималось HP, добавить его в Prefabs.(Denis Yurkov)
 		+ Now Particle Disappear(Denis Yurkov)		
+		+ Write code for Health BAR.(Denis Yurkov)
+		+ Добавить подсказку по управлению(Denis Yurkov)
 
 	Невыполненные:
 		
-		- Write code for Health BAR.(Denis Yurkov)
-		- Добавить и написать музыку для главного меню(Denis Yurkov)
-		- Добавить подсказку по управлению(Denis Yurkov)
+		
+		- Добавить и написать музыку для главного меню, и для уровня.(Denis Yurkov)
+		- Добавить подсказку по задачам(Denis Yurkov)
 		- Добавить в уровень сцену тира, где игрок может пострелять(Denis Yurkov)
 		- Добавить детали в уровень.(Denis Yurkov)
-
+		- Исправить то что пуля летят, с ног у врага.(Denis Yurkov)
 		
 		- Добавить в файл кто что делал, очистить проект от лишнего, сделать Build.(Denis Yurkov)
 	
