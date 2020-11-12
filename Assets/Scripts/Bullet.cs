@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿/*Denis Yurkov*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

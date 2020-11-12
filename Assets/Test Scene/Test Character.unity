@@ -1680,6 +1680,11 @@ PrefabInstance:
       propertyPath: DarkBG
       value: 
       objectReference: {fileID: 236352450}
+    - target: {fileID: 3556347705419936960, guid: 9e3714d8f1d78674c86ec676b9894d66,
+        type: 3}
+      propertyPath: timeParticleDie
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3556347705419936989, guid: 9e3714d8f1d78674c86ec676b9894d66,
         type: 3}
       propertyPath: m_CullingMask.m_Bits

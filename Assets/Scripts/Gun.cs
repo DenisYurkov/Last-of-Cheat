@@ -61,15 +61,16 @@ public class Gun : MonoBehaviour
 
                 if (hit.transform.gameObject.tag == "barrel roll" || hit.transform.gameObject.tag == "die effect")
                 {
-                    Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(explosionAndDieEffect, timeParticleDie);
+
+                    var particale = Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(particale.gameObject, timeParticleDie);
                 }
 
                 if (hit.transform.gameObject.tag == "barrel explosion")
                 {
-                    Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(explosionAndDieEffect, timeParticleDie);
+                    var particale = Instantiate(explosionAndDieEffect, hit.point, Quaternion.LookRotation(hit.normal));
                     barrelExplosion.Play();
+                    Destroy(particale.gameObject, timeParticleDie);
                 }
             }
         }
