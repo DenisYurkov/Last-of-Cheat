@@ -7,20 +7,51 @@ public class buttons : MonoBehaviour
 {
     
     public GameObject BgSet;
-    
-    public GameObject BgMenu;
+    public GameObject DarkBg;
+    public GameObject BgMenu, AUSWin;
 
     private bool music = true;
     private float music_scale, sound_scale;
     public Slider sliderMusic, sliderSound;
     public Sprite music_on, music_off; 
     public Sprite Sound_on, Sound_off;
-    void Start()
-    {
-       
+
+    
+    void Escape() {
+        if (BgSet.activeSelf == true) {
+            Time.timeScale = 1;
+            BgSet.SetActive(false);
+            BgMenu.SetActive(true);
+            DarkBg.SetActive(false);
+        } else {
+            if (DarkBg.activeSelf == false)
+            {
+                
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.Confined;
+               
+                DarkBg.SetActive(true);
+            }
+            else
+            {
+               
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+
+                DarkBg.SetActive(false);
+            } 
+        }
+
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (AUSWin.activeSelf == false)  
+                Escape();
+            
+        }
+
+
        if (BgSet.activeSelf == true) { 
         GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = sliderMusic.value;
         GameObject.Find("Canvas").GetComponent<AudioSource>().volume = sliderSound.value;
@@ -51,6 +82,20 @@ public class buttons : MonoBehaviour
     public void OnMouseUpAsButton() {
          switch (gameObject.name)
          {
+            case "No":
+                BgMenu.SetActive(true);
+                AUSWin.SetActive(false);
+                break;
+            case "Yes":
+                //please, write here loadscene
+                break;
+            case "BackToMM":
+                BgMenu.SetActive(false);
+                AUSWin.SetActive(true);
+                break;
+            case "Return":
+                Escape();
+                break;
             case "Back":
                 BgMenu.SetActive(true);
                 BgSet.SetActive(false);

@@ -5,9 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class AI : MonoBehaviour
-{
-    public float playerHealth = 100f;
-    
+{   
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -84,11 +82,11 @@ public class AI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-
+            // transform.position = new Vector2(1, 6.0f).
             // Attack code here.
-            Rigidbody rb = Instantiate(enemAttack, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(enemAttack, transform.position, transform.rotation * Quaternion.Euler(90, 0, 0)).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 24f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 4f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 2f, ForceMode.Impulse);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -98,20 +96,6 @@ public class AI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-    }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "First Person Player")
-        {
-            Debug.Log("hit");
-           *//* playerHealth -= 10;
-            if (playerHealth <= 0) Invoke(nameof(DestroyEnemy), 0.5f);*//*
-        }
-    }*/
-    private void DestroyPlayer()
-    {
-        Destroy(GameObject.Find("First Person Player"));
     }
 
     private void OnDrawGizmosSelected()
