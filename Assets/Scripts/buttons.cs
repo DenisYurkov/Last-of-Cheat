@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class buttons : MonoBehaviour
 {
@@ -82,6 +83,15 @@ public class buttons : MonoBehaviour
     public void OnMouseUpAsButton() {
          switch (gameObject.name)
          {
+            case "Try Again":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                break;
+            case "Main menu":
+                SceneManager.LoadScene(0);
+                break;
+            case "New game":
+                SceneManager.LoadScene(1);
+                break;
             case "No":
                 BgMenu.SetActive(true);
                 AUSWin.SetActive(false);
