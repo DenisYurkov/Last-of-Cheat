@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< Updated upstream
-- path: Assets/Test Scene/Test_level3.unity
-=======
-- path: Assets/Test Scene/Test Character.unity
->>>>>>> Stashed changes
+- path: Assets/Scene/main menu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
