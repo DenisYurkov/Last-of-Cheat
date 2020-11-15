@@ -10,24 +10,26 @@ public class buttons : MonoBehaviour
     public GameObject BgSet;
     public GameObject DarkBg;
     public GameObject BgMenu, AUSWin;
-
+/*
     private GameObject healthBar;
     private GameObject helpCanvas;
     private GameObject aim;
     private GameObject gun;
-
+*/
     private bool music = true;
     private float music_scale, sound_scale;
     public Slider sliderMusic, sliderSound;
     public Sprite music_on, music_off; 
     public Sprite Sound_on, Sound_off;
 
+/*    private bool check = true;*/
     private void Start()
     {
-        healthBar = GameObject.Find("Health Bar");
+/*        healthBar = GameObject.Find("Health Bar");
         helpCanvas = GameObject.Find("Help Canvas");
         aim = GameObject.Find("Aim");
         gun = GameObject.Find("Person");
+        check = GetComponent<Player>().checkEsc;*/
     }
     void Escape() {
         if (BgSet.activeSelf == true) {
@@ -43,10 +45,10 @@ public class buttons : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Confined;
 
                 DarkBg.SetActive(true);
-                helpCanvas.SetActive(false);
+                /*helpCanvas.SetActive(false);
                 healthBar.SetActive(false);
                 aim.SetActive(false);
-                gun.SetActive(false);
+                gun.SetActive(false);*/
             }
             else
             {
@@ -55,17 +57,18 @@ public class buttons : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 
                 DarkBg.SetActive(false);
-                helpCanvas.SetActive(true);
+/*                helpCanvas.SetActive(true);
                 healthBar.SetActive(true);
                 aim.SetActive(true);
-                gun.SetActive(true);
+                gun.SetActive(true);*/
             } 
         }
 
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("First Person Player").GetComponent<Player>().currentHealth != 0) {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             if (AUSWin.activeSelf == false)
                 Escape();
             
@@ -112,6 +115,7 @@ public class buttons : MonoBehaviour
                 break;
             case "New game":
                 SceneManager.LoadScene(1);
+                Time.timeScale = 1;
                 break;
             case "No":
                 BgMenu.SetActive(true);
@@ -134,12 +138,10 @@ public class buttons : MonoBehaviour
              case "Settings":
                 BgMenu.SetActive(false);
                 BgSet.SetActive(true);
-                
                  break;
              case "Quit":
                 Application.Quit();
-                 
-                     break;
+                break;
             case "Music":
                 if (music == true)
                 {
