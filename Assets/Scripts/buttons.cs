@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class buttons : MonoBehaviour
 {
-    
+    [Header("UI")]
     public GameObject BgSet;
     public GameObject DarkBg;
     public GameObject BgMenu, AUSWin;
+
+    private GameObject healthBar;
+    private GameObject helpCanvas;
+    private GameObject aim;
+    private GameObject gun;
 
     private bool music = true;
     private float music_scale, sound_scale;
@@ -17,7 +22,13 @@ public class buttons : MonoBehaviour
     public Sprite music_on, music_off; 
     public Sprite Sound_on, Sound_off;
 
-    
+    private void Start()
+    {
+        healthBar = GameObject.Find("Health Bar");
+        helpCanvas = GameObject.Find("Help Canvas");
+        aim = GameObject.Find("Aim");
+        gun = GameObject.Find("Person");
+    }
     void Escape() {
         if (BgSet.activeSelf == true) {
             Time.timeScale = 1;
@@ -30,24 +41,32 @@ public class buttons : MonoBehaviour
                 
                 Time.timeScale = 0;
                 Cursor.lockState = CursorLockMode.Confined;
-               
+
                 DarkBg.SetActive(true);
+                helpCanvas.SetActive(false);
+                healthBar.SetActive(false);
+                aim.SetActive(false);
+                gun.SetActive(false);
             }
             else
             {
                
                 Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
-
+                
                 DarkBg.SetActive(false);
+                helpCanvas.SetActive(true);
+                healthBar.SetActive(true);
+                aim.SetActive(true);
+                gun.SetActive(true);
             } 
         }
 
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (AUSWin.activeSelf == false)  
+        if (Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("First Person Player").GetComponent<Player>().currentHealth != 0) {
+            if (AUSWin.activeSelf == false)
                 Escape();
             
         }
@@ -84,10 +103,12 @@ public class buttons : MonoBehaviour
          switch (gameObject.name)
          {
             case "Try Again":
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(1);
+                Time.timeScale = 1;
                 break;
             case "Main menu":
                 SceneManager.LoadScene(0);
+                Time.timeScale = 1;
                 break;
             case "New game":
                 SceneManager.LoadScene(1);
@@ -97,7 +118,7 @@ public class buttons : MonoBehaviour
                 AUSWin.SetActive(false);
                 break;
             case "Yes":
-                //please, write here loadscene
+                SceneManager.LoadScene(0);
                 break;
             case "BackToMM":
                 BgMenu.SetActive(false);

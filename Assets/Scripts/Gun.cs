@@ -12,12 +12,12 @@ public class Gun : MonoBehaviour
     [SerializeField] Camera fpsCam;
 
     [Header("Particle")]
-    [SerializeField] ParticleSystem shotEffect;
+    public ParticleSystem shotEffect;
     [SerializeField] ParticleSystem explosionAndDieEffect;
     [SerializeField] public float timeParticleDie = 1f;
 
     [Header("Audio")]
-    [SerializeField] AudioSource audioShot;
+    public AudioSource audioShot;
     [SerializeField] AudioSource barrelExplosion;
 
     [Header("UI")]
