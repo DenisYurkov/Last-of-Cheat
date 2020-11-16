@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -15,23 +16,20 @@ public class Player : MonoBehaviour
 
 
     public GameObject player;
-    public bool checkEsc = true;
 
 
-
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
         healthBar.SetMaxHealth(health);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0 )
+        if (currentHealth <= 0)
         {
-            checkEsc = false;
             AudioListener.Destroy(player.GetComponent<AudioListener>());
             player.GetComponent<Gun>().enabled = false;
             GameObject.Find("Person").SetActive(false);
@@ -41,12 +39,11 @@ public class Player : MonoBehaviour
 
             GameObject.Find("ResIm").GetComponent<Image>().sprite = GameOver;
             Cursor.lockState = CursorLockMode.Confined;
-            
-           
+
+
         }
         if (GameObject.Find("Enem") == null)
         {
-            checkEsc = false;
             AudioListener.Destroy(player.GetComponent<AudioListener>());
             player.GetComponent<Gun>().enabled = false;
             GameObject.Find("Person").SetActive(false);

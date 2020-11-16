@@ -20,7 +20,9 @@ public class MouseLook : MonoBehaviour
          * Когда заблокировано, курсор помещается в центр вида и не может быть перемещен.
          * Состояние курсора может быть изменено операционной системой или Unity.
          */
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     // Update is called once per frame

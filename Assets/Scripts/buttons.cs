@@ -22,62 +22,51 @@ public class buttons : MonoBehaviour
     public Sprite music_on, music_off; 
     public Sprite Sound_on, Sound_off;
 
-/*    private bool check = true;*/
-    private void Start()
+
+    void Escape()
     {
-/*        healthBar = GameObject.Find("Health Bar");
-        helpCanvas = GameObject.Find("Help Canvas");
-        aim = GameObject.Find("Aim");
-        gun = GameObject.Find("Person");
-        check = GetComponent<Player>().checkEsc;*/
-    }
-    void Escape() {
-        if (BgSet.activeSelf == true) {
+        if (BgSet.activeSelf == true)
+        {
             Time.timeScale = 1;
             BgSet.SetActive(false);
             BgMenu.SetActive(true);
             DarkBg.SetActive(false);
-        } else {
+        }
+        else
+        {
             if (DarkBg.activeSelf == false)
             {
-                
+
                 Time.timeScale = 0;
                 Cursor.lockState = CursorLockMode.Confined;
 
                 DarkBg.SetActive(true);
-                /*helpCanvas.SetActive(false);
-                healthBar.SetActive(false);
-                aim.SetActive(false);
-                gun.SetActive(false);*/
             }
             else
             {
-               
+
                 Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
-                
+
                 DarkBg.SetActive(false);
-/*                helpCanvas.SetActive(true);
-                healthBar.SetActive(true);
-                aim.SetActive(true);
-                gun.SetActive(true);*/
-            } 
+            }
         }
 
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("Level") != null)
         {
             if (AUSWin.activeSelf == false)
+                Cursor.visible = true;
                 Escape();
             
         }
 
 
        if (BgSet.activeSelf == true) { 
-        GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = sliderMusic.value;
-        GameObject.Find("Canvas").GetComponent<AudioSource>().volume = sliderSound.value;
+            GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = sliderMusic.value;
+            GameObject.Find("Canvas").GetComponent<AudioSource>().volume = sliderSound.value;
         if (sliderMusic.value == 0)
         {
             GameObject.Find("Music").GetComponent<Image>().sprite = music_off;
@@ -102,8 +91,9 @@ public class buttons : MonoBehaviour
         }
 
     }
+
     public void OnMouseUpAsButton() {
-         switch (gameObject.name)
+        switch (gameObject.name)
          {
             case "Try Again":
                 SceneManager.LoadScene(1);
@@ -114,7 +104,7 @@ public class buttons : MonoBehaviour
                 Time.timeScale = 1;
                 break;
             case "New game":
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 Time.timeScale = 1;
                 break;
             case "No":

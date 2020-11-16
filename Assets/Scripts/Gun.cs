@@ -23,6 +23,10 @@ public class Gun : MonoBehaviour
     [Header("UI")]
     [SerializeField] GameObject DarkBG;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
     // Update is called once per frame
     void Update()
     {
